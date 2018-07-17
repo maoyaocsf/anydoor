@@ -2,6 +2,7 @@ const {cache} = require('../config/defaultConfig');
 
 function refreshRes(stats,res){
     const {maxAge,expires,cacheControl,lastModified,etag} =cache;
+    
     if(expires){
         res.setHeader('Expires',(new Date(Date.now()+maxAge*1000)).toUTCString());
     }
